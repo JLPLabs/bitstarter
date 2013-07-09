@@ -4,11 +4,11 @@ var app = express.createServer(express.logger());
 
 var buf = new Buffer(256);
 
-buf.write(fs.readFileSync("index.html"));
+var len = buf.write(fs.readFileSync("index.html"));
 
 app.get('/', function(request, response) {
   //response.send('Hello World2!');
-  response.send(buf.toString());
+  response.send(buf.toString(),0,len);
 });
 
 var port = process.env.PORT || 5000;
