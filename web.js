@@ -7,7 +7,7 @@ var app = express.createServer(express.logger());
 //console.log(data.toString());
 
 var buf = new Buffer(fs.readFileSync("index.html"));
-//console.log(buf.toString());
+console.log(buf.toString());
 
 app.get('/', function(request, response) {
   //response.send('Hello World2!');
